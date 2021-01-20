@@ -1,5 +1,6 @@
 # Similarity-Based-Ensemble-Methods
 (Recent TO DO: Clean up ipynb verbose output from keras models, organize/add markdown to each cell, clean + add other files)
+
 This repo consists of the experimental results of the proposed Clu-bag ensemble method. The idea is to initially estimate a probability density function of the datset via some clustering or directly by density estimation, then assign a "clustering" or "peak" to a model (i.e. equivalent models), then use a modified form of bootstrap aggregation. First, we place higher probabilities on resampling data points closer to the mean of the assigned cluster. After training, we use the estimated posterior probability from our clustering/density estimation for each cluster as a convex combination of the corresponding model predictions, to come up with a weighted prediction. 
 The intuition is that the procedure provides us with a more robust model from bagging, while also improving accuracy/reducing loss by reducing the "complexity" of the data - each model learns from "similar" data, which we hope learns the more subtle yet important differences between them, compared to learning patterns from a mix of data. A more formal analysis and deeper intuition can be found in the PDF [To be added].
 
